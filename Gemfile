@@ -7,5 +7,5 @@ gem 'rspec'
 gem 'guard-rspec', require: false
 
 group :development, :test do
-  gem 'rack-test', require: 'rack/test'
+  gem 'rack-test'
 end
