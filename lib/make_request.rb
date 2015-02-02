@@ -2,13 +2,13 @@ require 'rubygems'
 require 'rack'
 
 class MakeRequest
-  attr_reader :response
 
   class << self
+    attr_reader :response, :request
 
     def call(env)
-      request = create_request(env)
-      message = request.params['message']
+      @request = create_request(env)
+      message  = @request.params['message']
 
       responds_to message
     end
@@ -29,7 +29,6 @@ class MakeRequest
       response = Rack::Response.new
       response.body = message ? [message] : ['Make a response']
       response['X-CUSTOM-HEADER'] = 'foo'
-      response.set_cookie 'bar', 'baz'
       response.status = 200
 
       response
