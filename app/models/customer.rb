@@ -2,6 +2,6 @@ class Customer
   CUSTOMERS = ['Rafael', 'BlaBla', 'Lele']
 
   def self.all
-    CUSTOMERS  
+    CUSTOMERS
   end
 end

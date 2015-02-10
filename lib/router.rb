@@ -6,7 +6,7 @@ module Rackapp
 
     def router
       Rack::Router.new do
-        get '/customers' => CustomersController 
+        get '/customers' => CustomersController
         get '/products'  => ProductsController
       end
     end

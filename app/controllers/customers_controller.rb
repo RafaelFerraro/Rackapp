@@ -1,5 +1,9 @@
 class CustomersController < ApplicationController
   def response_handler request
-    [200, { "Content-Type" => "text/html" }, [request.path_info]]
+    response        = Rack::Response.new
+    response.body   = Customer.all
+    response.status = 200
+
+    response
   end
 end
